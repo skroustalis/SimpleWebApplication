@@ -1,6 +1,5 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@page import="model.User"%>
 <%@page import="model.Address"%> 
 <%@page import="java.util.List"%>
@@ -10,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Simple Web Application</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -27,7 +26,7 @@
 							for (User c: list) {
 							Address adr = c.getAddress(); 	
 					 %>					 	
- 					 	<div class="card">
+ 					 <div class="card">
 					    <div class="card-header text-center">
 					      <a class="btn" data-bs-toggle="collapse" href="#collapse<%=c.getId()%>">
 					        <%=c.getName()%> <%=c.getSurname()%>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Simple Web Application</title>
 <link rel="stylesheet"
  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  </head>
@@ -19,8 +19,8 @@
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Homepage</p>
 	             <div class="d-grid gap-2 col-6 mx-auto ">
-						  <a  class="btn btn-primary" href="<%=request.getContextPath()%>/register">New User</a>
-						  <a  class="btn btn-primary" href="<%=request.getContextPath()%>/display">Display</a>
+			     	<a  class="btn btn-primary" href="<%=request.getContextPath()%>/register">New User</a>
+					<a  class="btn btn-primary" href="<%=request.getContextPath()%>/display">Display</a>
 				 </div>
               </div>
               	<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
