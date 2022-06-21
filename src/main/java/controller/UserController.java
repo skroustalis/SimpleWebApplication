@@ -72,7 +72,6 @@ public class UserController extends HttpServlet {
 
 		List<User> listUser = userDao.getAllUsers();
 		request.setAttribute("listUser", listUser);
-		System.out.print(listUser.toString());
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("display.jsp");
 		dispatcher.forward(request, response);
