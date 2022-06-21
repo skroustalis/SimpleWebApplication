@@ -36,9 +36,7 @@ public class UserDao {
 
         List < User > listOfUser = new ArrayList<User>();
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-
-            listOfUser = session.createQuery("FROM User").getResultList();
- 
+            listOfUser = session.createQuery("FROM User").getResultList(); 
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +72,7 @@ public class UserDao {
             // get an user object
         	User user = session.get(User.class, id);
             session.delete(user);
-                        // commit transaction
+            // commit transaction
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -83,5 +81,21 @@ public class UserDao {
             e.printStackTrace();
         	
         } 
+    }
+        public void updateUser(User user) {
+            Transaction transaction = null;
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                // start a transaction
+                transaction = session.beginTransaction();
+                // save the student object
+                session.update(user);
+                // commit transaction
+                transaction.commit();
+            } catch (Exception e) {
+                if (transaction != null) {
+                    transaction.rollback();
+                }
+                e.printStackTrace();
+            }
     }
 }

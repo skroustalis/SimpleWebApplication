@@ -3,7 +3,6 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import net.bytebuddy.utility.nullability.NeverNull;
-
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -24,14 +21,13 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@NeverNull
 	@Column (name ="name")
 	private String name;
-	@Column (name ="surname", nullable=false)
+	@Column (name ="surname")
 	private String surname;
-	@Column (name ="gender", nullable=false)
+	@Column (name ="gender")
 	private String gender;
-	@Column (name ="birthdate", nullable=false)
+	@Column (name ="birthdate")
 	private Date birthdate;
 
 	@OneToOne (cascade = CascadeType.ALL)
@@ -42,6 +38,10 @@ public class User implements Serializable {
 		return id;
 	}
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Address getAddress() {
 		return address;
 	}
@@ -74,13 +74,10 @@ public class User implements Serializable {
 	}
 	
 	@Override
-	
 	public String toString() {
 		return "name "+ name + " surname " + surname + " gender " + gender + " birthdate " + birthdate + " work_address " +
 	address.getWork_address() + " home_address " + address.getHome_address();
 			
 	}
-	
-	
-    
+  
 }

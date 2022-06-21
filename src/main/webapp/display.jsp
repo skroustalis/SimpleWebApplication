@@ -3,7 +3,6 @@
 <%@page import="model.User"%>
 <%@page import="model.Address"%> 
 <%@page import="java.util.List"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -41,7 +40,11 @@
 					        <li class="list-group-item ">Birthdate:<%=c.getBirthdate()%></li>
 					        <li class="list-group-item ">Work Address:<%=adr.getWork_address()%></li>
 					        <li class="list-group-item ">Home Address:<%=adr.getHome_address()%></li>
-					        <a  class="btn btn-danger" href="<%=request.getContextPath()%>/delete?id=<%=c.getId()%>">Delete User</a>
+					        <div class="d-grid row justify-content-center mt-5">
+			            		<div class="mb-5">
+									<a  class="btn btn-danger" href="<%=request.getContextPath()%>/delete?id=<%=c.getId()%>">Delete User</a>
+									<a  class="btn btn-primary" href="<%=request.getContextPath()%>/update?id=<%=c.getId()%>">Update User</a>
+						   		</div> 
 					     </ul>
 					    </div>
 					    </div>
