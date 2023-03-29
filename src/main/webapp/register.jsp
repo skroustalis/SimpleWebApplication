@@ -80,14 +80,14 @@
                   <div class="d-flex flex-row align-items-center mb-2">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example4cd" class="form-control" name="work_address" value="<c:out value='${address.work_address}'/>"/>
+                      <input type="text" id="form3Example4cd" class="form-control" name="work_address" value="<c:out value='${user.address.work_address}'/>"/>
                       <label class="form-label" for="form3Example4cd">Work Address</label>
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-2">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example4cd" class="form-control" name="home_address" value="<c:out value='${address.home_address}'/>"/>
+                      <input type="text" id="form3Example4cd" class="form-control" name="home_address" value="<c:out value='${user.address.home_address}'/>"/>
                       <label class="form-label" for="form3Example4cd">Home Address</label>
                     </div>
                   </div>
